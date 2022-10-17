@@ -542,6 +542,269 @@ background-color: var(--section-color);
     background-position: right bottom;
 }
 /* End features */
+/* Start testimonials */
+.testimonials {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-color);
+    position: relative;
+}
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.testimonials .box {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
+}
+.testimonials .box img {
+    position: absolute;
+    border: 10px solid var(--section-color);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    right: -10px;
+}
+.testimonials .box .title {
+    display: block;
+    margin: 10px 0;
+    color: #777;
+}
+.testimonials .box .rate .filled {
+    color: #ffc107;
+}
+.testimonials .box p {
+    color: #555;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+/* End testimonials */
+/* Start team */
+.team {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    gap: 40px;
+}
+.team .box {
+    position: relative;
+}
+.team .box::before,
+.team .box::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    top:0px;
+    right: 0px;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.team .box:before {
+    width: calc(100% - 60px);
+    background-color: #F3F3F3;
+    z-index: -2;
+}
+.team .box::after {
+    background-color: #e4e4e4;
+    z-index: -1;
+    width: 0;
+}
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+.team .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+.team .data img {
+    width: calc(100% - 60px);
+    max-width: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.team .box:hover img {
+    filter: grayscale(100%);
+}
+.team .box .data .social {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.team .box .data .social a {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team .box .data .social i{
+    color: #777;
+    font-size: 20px;
+    transition: var(--main-transition);
+}
+.team .box .data .social a:hover i{
+    color: var(--main-color);
+}
+.team .box .info {
+    padding-left: 80px;
+}
+.team .box .info h3 {
+    margin-top: 10px;
+    color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+.team .box:hover .info h3 {
+    color: #555;
+}
+.team .box .info p {
+    margin: 10px 0 20px;
+    color: #777;
+    font-size: 18px;
+}
+/* End team */
+/* Start Services */
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-color);
+    position: relative;
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.services .box {
+    position: relative;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0,0.2),0 2px 4px 0 rgba(0, 0, 0,0.2);
+    background-color: white;
+    counter-increment: services;
+    text-align: center;
+    transition: var(--main-transition);
+}
+.services .box:hover {
+    transform: translateY(-10px);
+}
+.services .box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+.services .box:hover::before {
+    width: 100%;
+}
+.services .box > i {
+    color: #d5d5d5;
+    margin: 40px 0 20px;
+}
+.services .box > h3 {
+    color: var(--main-color);
+    margin: 0 0px 40px;
+    font-size: 25px;
+}
+.services .box .info {
+    position: relative;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: right;
+}
+.services .box .info::before {
+    content: "0"counter(services);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+.services .box .info::after {
+    content: "";
+    position: absolute;
+    background-color: #d5d5d5;
+    top: 0;
+    left: 80px;
+    width: 50px;
+    height: 100%;
+    transform: skewX(-30deg);
+}
+.services .box .info a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+/* End Services */
+/* Start our-skills */
+.our-skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+@media(max-width:991px) {
+    .our-skills .skills img {
+        display: none;
+    }
+}
+.our-skills .skills {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.our-skills .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.our-skills .skill h3 span {
+    font-size: 12px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    padding: 3px 5px;
+    color: var(--main-color);
+}
+.our-skills .skill .the-progress {
+    height: 30px;
+    background-color: #EEE;
+    position: relative;
+}
+.our-skills .skill .the-progress span{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    height: 100%;
+    background-color: var(--main-color);
+}
+/* End our-skills */
 /* Animations */
 @keyframes up-down {
     0%,100% {
