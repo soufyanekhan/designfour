@@ -805,6 +805,67 @@ background-color: var(--section-color);
     background-color: var(--main-color);
 }
 /* End our-skills */
+/* Start work-steps */
+.work-steps {
+    background-color: var(--section-color);
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.work-steps .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+@media(max-width:991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
+.work-steps .image {
+    max-width: 100%;
+}
+.work-steps .info .box {
+    background-color: #f6f5f5;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.work-steps .info .box::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 0px;
+    width: 0px;
+    background-color: #ededed;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+.work-steps .info .box:hover::before {
+    height: 100%;
+    width: 100%;
+}
+.work-steps .info .box img {
+    width: 64px;
+    margin-right: 30px;
+}
+.work-steps .info .box h3 {
+    font-size: 22px;
+}
+.work-steps .info .box p {
+    color: #777;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+/* End work-steps */
 /* Animations */
 @keyframes up-down {
     0%,100% {
