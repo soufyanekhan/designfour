@@ -168,6 +168,7 @@ transform: translateY(-50%);
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 @media (max-width:767px) {
     .page .wrapper {
@@ -303,4 +304,274 @@ transform: translateY(-50%);
     }
 }
 /* End tickets */
+/* Start latest news */
+.latest-news .news-row:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.latest-news .news-row img {
+    width: 100px;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+.latest-news .info {
+    flex-grow: 1;
+}
+.latest-news .info h3 {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+@media(max-width:767px) {
+    .latest-news .news-row {
+        flex-direction: column;
+    }
+    .latest-news .info {
+        margin: 10px 0;
+    }
+}
+/* End latest news */
+/* Start tasks */
+.tasks .task-row {
+    margin-bottom: 15px;
+    padding: 15px;
+}
+.tasks .task-row:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+.tasks .info {
+    flex-grow: 1;
+}
+.tasks .done {
+    opacity: 0.3;
+}
+.tasks .done h3,
+.tasks .done p {
+    text-decoration: line-through;
+}
+.tasks .delete {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tasks .delete:hover {
+    color: var(--red-color);
+}
+/* End tasks */
+/* Start uploads */
+.latest-uploads ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.latest-uploads ul li img {
+    width: 40px;
+    height: 40px;
+}
+/* End uploads */
+/* Start Last Project */
+.last-project ul::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 11px;
+    background-color: var(--blue-color);
+}
+.last-project ul li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    /* display: block; */
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    outline: 2px solid var(--blue-color);
+    margin-right: 15px;
+    z-index: 1;
+}
+.last-project ul li.done::before {
+    background-color: var(--blue-color);
+}
+.last-project ul li.current::before {
+    animation: change-color 0.8s infinite alternate;
+}
+.last-project .launch-icon {
+    position: absolute;
+    opacity: 0.4;
+    bottom: 0;
+    right: 0;
+    width: 180px;
+}
+/* End Last Project */
+/* Start reminders */
+.reminders ul li .key {
+    width: 15px;
+    height: 15px;
+}
+.reminders ul li > .blue {
+    border-left: 2px solid var(--blue-color);
+}
+.reminders ul li > .orange {
+    border-left: 2px solid var(--orange-color);
+}
+.reminders ul li > .green {
+    border-left: 2px solid var(--green-color);
+}
+.reminders ul li > .red {
+    border-left: 2px solid var(--red-color);
+}
+/* End reminders */
+/* Start last-post */
+.latest-post .avatar {
+    width: 64px;
+    height: 64px;
+}
+.latest-post .post-content {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-transform: capitalize;
+    line-height: 1.8;
+    min-height: 140px;
+}
+/* End last-post */
+/* Start social-media */
+.social-media .box {
+    padding-left: 70px;
+}
+.social-media .box i{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52px;
+    transition: 0.3s;
+}
+.social-media .box i:hover {
+    transform: rotate(5deg);
+}
+.social-media .twitter {
+    background-color: #1da0f230;
+    color: #1da1f2;
+}
+.social-media .twitter i,
+.social-media .twitter a {
+    background-color: #1da0f2;
+}
+.social-media .facebook {
+    background-color: #1877f230;
+    color: #1877f2;
+}
+.social-media .facebook i,
+.social-media .facebook a {
+    background-color: #1877f2;
+}
+.social-media .youtube {
+    background-color: #ff000030;
+    color: #ff0000;
+}
+.social-media .youtube i,
+.social-media .youtube a {
+    background-color: #ff0000;
+}
+.social-media .linkedin {
+    background-color: #0057b530;
+    color: #0057b5;
+}
+.social-media .linkedin i,
+.social-media .linkedin a {
+    background-color: #0057b5;
+}
+/* Snd social-media */
+/* Start Projects Table */
+.projects .responsive-table {
+    overflow-x: auto;
+}
+.projects table {
+    min-width: 1000px;
+    border-spacing: 0;
+}
+.projects thead td {
+    background-color: #eee;
+    font-weight: bold;
+}
+.projects table td {
+    padding: 15px;
+}
+.projects tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    transition: 0.3s;
+}
+.projects tbody tr td:last-child {
+    border-right: 1px solid #eee;
+}
+.projects tbody tr:hover td {
+    background-color: #faf7f7;
+}
+.projects table img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+}
+.projects table img:not(:first-child) {
+    margin-left: -20px;
+}
+/* End Projects Table */
 /* End Content */
+/* Start Settings page */
+.settings-page {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+@media(max-width:767px) {
+    .settings-page {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+.settings-page textarea {
+    min-height: 150px;
+    resize: none;
+    border: 1px solid #ccc;
+}
+.settings-page .email {
+    width: calc(100% - 80px);
+    margin-right: 10px;
+    display: inline-flex;
+}
+/* End Settings page */
+/* Start security-info */
+.settings-page .security-info .Enable {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* End security-info */
+/* Start social-info */
+.settings-page .social-info i {
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    transition: 0.3s;
+}
+.settings-page .social-info input {
+    height: 40px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    border-radius: 0 6px 6px 0;
+}
+.settings-page .social-info > div:focus-within i {
+    color: black;
+}
+/* End social-info */
+@keyframes change-color {
+    0% {
+        background-color: var(--blue-color);
+    }
+    100% {
+        background-color: white;
+    }
+}
