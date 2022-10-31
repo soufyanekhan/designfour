@@ -523,7 +523,7 @@ transform: translateY(-50%);
 }
 @media(max-width:767px) {
     .settings-page {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: minmax(100px, 1fr);
         margin-left: 10px;
         margin-right: 10px;
         gap: 10px;
@@ -539,7 +539,6 @@ transform: translateY(-50%);
     margin-right: 10px;
     display: inline-flex;
 }
-/* End Settings page */
 /* Start security-info */
 .settings-page .security-info .Enable {
     border-top: 1px solid #ccc;
@@ -567,6 +566,120 @@ transform: translateY(-50%);
     color: black;
 }
 /* End social-info */
+/* Start widgets Control */
+.widgets-control .control input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+.widgets-control .control label {
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.widgets-control .control label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--grey-color);
+    border-radius: 4px;
+    margin-top: -9px;
+    transition: 0.3s;
+}
+.widgets-control .control label:hover::before {
+    border-color: var(--blue-alt-color);
+}
+.widgets-control .control label::after {
+    position: absolute;
+    font-family: var(--fa-style-family-classic);
+    content: "\f00c";
+    font-weight: 900;
+    top: 50%;
+    left: 0px;
+    margin-top: -9px;
+    background-color: var(--blue-color);
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0) rotate(360deg);
+    transition: 0.3s;
+}
+.widgets-control .control input[type="checkbox"]:checked + label::after {
+    transform: scale(1);
+}
+/* End widgets Control */
+/* Start backup manager */
+.backup-manager input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+.backup-manager .date label {
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.backup-manager .date label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--grey-color);
+    border-radius: 50%;
+    margin-top: -11px;
+    transition: 0.3s;
+}
+.backup-manager .date label:hover::before {
+    border-color: var(--blue-alt-color);
+}
+.backup-manager .date label::after {
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 5px;
+    background-color: var(--blue-color);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    transform: scale(0);
+    transition: 0.3s;
+}
+.backup-manager .date input[type="radio"]:checked + label::before {
+    border-color: var(--blue-color);
+}
+.backup-manager .date input[type="radio"]:checked + label::after {
+    transform: scale(1);
+}
+.backup-manager .servers {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+@media(max-width:767px) {
+    .backup-manager .servers {
+        flex-direction: column;
+    }
+}
+.backup-manager .servers .server {
+    border: 2px solid #eee;
+    position: relative;
+}
+.backup-manager .servers .server label {
+    cursor: pointer;
+}
+.backup-manager .servers input[type="radio"]:checked + .server {
+    color: var(--blue-color);
+    border-color: var(--blue-color);
+}
+/* End backup manager */
+/* End Settings page */
 @keyframes change-color {
     0% {
         background-color: var(--blue-color);
