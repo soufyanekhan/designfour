@@ -961,18 +961,178 @@ transform: translateY(-50%);
     background-color: var(--blue-color);
     color: white;
 }
-.friends-page .friend .contact .icons {
+.friends-page .friend .icons {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
-.friends-page .friend .contact .icons i {
+.friends-page .friend .icons i {
+    margin-right: 10px;
 }
-.friends-page .friend .contact .icons .vip {
+.friends-page .friend .icons .vip {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    opacity: 0.2;
 }
 /* End friends */
+/* Start files page */
+.files-page {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+@media(max-width:767px) {
+    .files-page {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+.files-page .files-stats {
+    min-width: 300px;
+}
+@media(max-width:767px) {
+    .files-page .files-stats {
+        min-width: 200px;
+    }
+}
+.files-page .files-stats .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.files-page .files-stats .blue {
+    background-color: rgba(0, 117, 255, 0.2);
+}
+.files-page .files-stats .orange{
+    background-color: rgba(245, 158, 11, 0.2);
+}
+.files-page .files-stats .green {
+    background-color: rgba(34, 197, 94, 0.2);
+}
+.files-page .files-stats .red {
+    background-color: rgba(244, 67, 54, 0.2);
+}
+.files-page .files-stats .info + span {
+    margin-left: auto;
+}
+.files-page .files-stats .upload {
+    margin: 0 auto;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+.files-page .files-stats .upload:hover {
+    background-color: var(--blue-alt-color);
+}
+.files-page .files-stats .upload:hover i {
+    animation: go-up 0.8s infinite;
+}
+.files-page .files {
+    flex: 1;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+@media(max-width:767px) {
+    .files-page .files {
+        grid-template-columns: minmax(150px, 1fr);
+    }
+}
+.files-page .file i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.files-page .file img {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 64px;
+    height: 64px;
+    transition: 0.3s;
+}
+
+.files-page .file:hover img {
+    transform: rotate(5deg);
+}
+.files-page .file .info {
+    border-top: 1px solid #eee;
+}
+/* End files page */
+/* Start plans page */
+.plans-page {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+@media(max-width:767px) {
+    .plans-page {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+.plans-page .plan .top {
+    border: 3px solid white;
+    outline: 3px solid transparent;
+}
+.plans-page .plan.green .top {
+    outline-color: var(--green-color);
+}
+.plans-page .plan.blue .top {
+    outline-color: var(--blue-color);
+}
+.plans-page .plan.orange .top {
+    outline-color: var(--orange-color);
+}
+.plans-page .plan .price {
+    position: relative;
+    font-size: 40px;
+    width: fit-content;
+    margin: auto;
+}
+.plans-page .plan .price span {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    font-size: 20px;
+}
+.plans-page .plan ul li {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+}
+.plans-page .plan ul li .yes {
+    color: var(--green-color);
+}
+.plans-page .plan ul li i:not(.yes, .help) {
+    color: var(--red-color);
+}
+.plans-page .plan ul li i:first-child {
+    margin-right: 10px;
+    font-size: 18px;
+}
+.plans-page .plan ul li .help {
+    margin-left: auto;
+    color: var(--grey-color);
+    cursor: pointer;
+}
+/* End plans page */
 @keyframes change-color {
     0% {
         background-color: var(--blue-color);
     }
     100% {
         background-color: white;
+    }
+}
+@keyframes go-up {
+    0%,100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
     }
 }
